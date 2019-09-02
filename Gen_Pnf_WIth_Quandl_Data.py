@@ -2,6 +2,7 @@ import quandl
 import pandas as pd
 import datetime
 import Parameters
+import CredentialLoader
 from ChartGenerator import ChartGenerator
 """
 
@@ -10,13 +11,13 @@ from ChartGenerator import ChartGenerator
 
 class Gen_Pnf_With_Quandl_Data:
     def __init__(self):
-        quandl.ApiConfig.api_key = Parameters.Quandl_API_KEY.get_quandl_api_key()
+        quandl.ApiConfig.api_key = CredentialLoader.Quandl_API_KEY.get_quandl_api_key()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         from_date = (self.__config.at[self.__config.first_valid_index(), 'from_dt']).strftime("%Y-%m-%d")
         to_date = datetime.datetime.now().strftime("%Y-%m-%d")
         self.__list_stocks = pd.read_csv('settings/quandl_chart_gen_list.csv')
-        self.__exchange = Parameters.EXCHNAGES.EXCHANGE_BSE
         for index, row in self.__list_stocks.iterrows():
+            self.__exchange = row['exchange']
             self.__data_historical = pd.DataFrame(columns=['date', 'open', 'high', 'low', 'close', 'volume'])
             self.__tmp = quandl.get(self.__exchange+'/' + row['tradingsymbol'], start_date=from_date, end_date=to_date)
             self.__tmp['Date'] = self.__tmp.index

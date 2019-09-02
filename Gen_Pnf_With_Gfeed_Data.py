@@ -8,6 +8,7 @@ from collections import OrderedDict, Counter
 from DhelmGfeedClient.gfeedclient import GfeedClient
 from DhelmGfeedClient.constants import Constants
 import Parameters
+import CredentialLoader
 from ChartGenerator import ChartGenerator
 """
 
@@ -17,7 +18,7 @@ from ChartGenerator import ChartGenerator
 class Gen_Pnf_With_Gfeed_Data:
     def __init__(self):
         self.debug = False
-        self.__credentials = Parameters.Gfeed_URI_API_KEY.get_gfeed_uri_api_key()
+        self.__credentials = CredentialLoader.Gfeed_URI_API_KEY.get_gfeed_uri_api_key()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         self.__client = GfeedClient(self.__credentials[0], self.__credentials[1])
         self.__list_stocks = pd.read_csv('settings/gfeed_chart_gen_list.csv')
@@ -54,6 +55,7 @@ class Gen_Pnf_With_Gfeed_Data:
         def on_message_historical_ohlc_data(base_client, historical_ohlc_data):
             if self.debug:
                 print("\n*********HISTORICAL OHLC DATA*************\n")
+            print(historical_ohlc_data)
             request = historical_ohlc_data['Request']
             if self.debug:
                 print(request)

@@ -6,6 +6,7 @@ from kiteconnect import KiteConnect
 from kiteconnect import exceptions
 import requests
 import Parameters
+import CredentialLoader
 from ChartGenerator import ChartGenerator
 """
 
@@ -14,7 +15,7 @@ from ChartGenerator import ChartGenerator
 
 class Gen_Pnf_With_Zerodha_Kite_Data:
     def __init__(self):
-        self.__credentials = Parameters.KITE_API_KEY_ACCESS_TOKEN.get_kite_credentials()
+        self.__credentials = CredentialLoader.KITE_API_KEY_ACCESS_TOKEN.get_kite_credentials()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         self.__client = KiteConnect(self.__credentials[0])
         self.__client.set_access_token(self.__credentials[1])
