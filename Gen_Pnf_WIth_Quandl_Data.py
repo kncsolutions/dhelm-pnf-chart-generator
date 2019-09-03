@@ -1,15 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+    **Gen_Pnf_With_Quandl_Data.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
+
 import quandl
 import pandas as pd
 import datetime
 import Parameters
 import CredentialLoader
 from ChartGenerator import ChartGenerator
-"""
-
-"""
 
 
 class Gen_Pnf_With_Quandl_Data:
+    """
+    This class generates point and figure chart after extracting data from quandl.
+    """
     def __init__(self):
         quandl.ApiConfig.api_key = CredentialLoader.Quandl_API_KEY.get_quandl_api_key()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))

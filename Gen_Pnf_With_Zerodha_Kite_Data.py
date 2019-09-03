@@ -1,4 +1,10 @@
-import quandl
+# -*- coding: utf-8 -*-
+"""
+    **Gen_Pnf_With_Zerodha_Kite_Data.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 import pandas as pd
 import datetime
 from collections import OrderedDict, Counter
@@ -8,12 +14,12 @@ import requests
 import Parameters
 import CredentialLoader
 from ChartGenerator import ChartGenerator
-"""
-
-"""
 
 
 class Gen_Pnf_With_Zerodha_Kite_Data:
+    """
+    This class generates point and figure chart after extracting data from zerodha kite historical api.
+    """
     def __init__(self):
         self.__credentials = CredentialLoader.KITE_API_KEY_ACCESS_TOKEN.get_kite_credentials()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))

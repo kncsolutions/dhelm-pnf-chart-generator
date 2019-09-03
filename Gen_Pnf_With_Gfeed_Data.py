@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+    **Gen_Pnf_With_Gfeed_Data.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 import pandas as pd
 import datetime
 import json
@@ -10,12 +17,12 @@ from DhelmGfeedClient.constants import Constants
 import Parameters
 import CredentialLoader
 from ChartGenerator import ChartGenerator
-"""
-
-"""
 
 
 class Gen_Pnf_With_Gfeed_Data:
+    """
+    This class generates point and figure chart after extracting historical data from Global Datafeed websocket api.
+    """
     def __init__(self):
         self.debug = False
         self.__credentials = CredentialLoader.Gfeed_URI_API_KEY.get_gfeed_uri_api_key()
@@ -55,7 +62,7 @@ class Gen_Pnf_With_Gfeed_Data:
         def on_message_historical_ohlc_data(base_client, historical_ohlc_data):
             if self.debug:
                 print("\n*********HISTORICAL OHLC DATA*************\n")
-            print(historical_ohlc_data)
+                print(historical_ohlc_data)
             request = historical_ohlc_data['Request']
             if self.debug:
                 print(request)

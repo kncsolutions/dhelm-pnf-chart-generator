@@ -1,4 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+    **CredentialLoader.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 import pandas as pd
+
+"""
+Class to handle the credentials related to quandl
+"""
+
+
 class Quandl_API_KEY:
     @staticmethod
     def get_quandl_api_key():
@@ -6,6 +19,10 @@ class Quandl_API_KEY:
         if data.at[data.first_valid_index(), 'api_key'] is None:
             raise Exception('Api key is empty or invalid.')
         return data.at[data.first_valid_index(), 'api_key']
+
+"""
+Class to handle the credentials related to Global Data Feed
+"""
 
 
 class Gfeed_URI_API_KEY:
@@ -17,6 +34,10 @@ class Gfeed_URI_API_KEY:
         if data.at[data.first_valid_index(), 'gfeed_api_key'] is None:
             raise Exception('Api key is empty or invalid.')
         return [data.at[data.first_valid_index(), 'gfeed_ws_endpoint'], data.at[data.first_valid_index(), 'gfeed_api_key']]
+"""
+Class to handle the credentials related to Zerodha kite api
+"""
+
 
 class KITE_API_KEY_ACCESS_TOKEN:
     @staticmethod

@@ -1,12 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+    **DhelmPnfDataCalculator.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 from Column import Column
 from Parameters import Box
 from Parameters import Types
 import math
-"""
-"""
 
 
 class DhelmPnfDataCalculator:
+    """
+    It calculates data points required to plot point and figure chart
+    :param  df : The historical dataset. Must contain 'date', 'open', 'high', 'low', 'close' columns. The last row must be
+    the latest data.
+    :param  calculation_method : Point and figure chart data will be calculated either using closing values or using
+    the high-low values. Valid values for this parameter are from {Types.Method_close, Types.Close}
+    :param  box_type : The box sizes can be specified by some value or using some percentage of the latest item. This
+    parameter specifies that which of the two options to be used.
+    Valid values are from {Types.Method_value, Types.Method_percentage}
+    :param box_size : Any custom box size. This will be valid only if box_type is Types.Method_value. If you want to use
+    default box sizes use -1 as argument.
+    :param reversal : The reversal amount. Default value is 3.
+    :param box_percentage : In case the box_type is Types.Method_percentage, the percentage amount can be specified here.
+    Default is 1 percent
+    """
     def __init__(self, df, calculation_method=Types.Method_close, box_type=Types.Method_value, box_size=-1, reversal=3,
                  box_percentage=1):
         self.DEBUG = False
@@ -257,15 +277,29 @@ class DhelmPnfDataCalculator:
                 c.type = Box.Xs
                 self.idx = self.idx + 1
         return c
-
+    """
+    :return Returns the box size.
+    """
     def get_box_size(self):
         return self.box_size
+
+    """
+    :return Returns data for point and figure chart column wise.
+    """
 
     def get_columns(self):
         return self.column_data
 
+    """
+    :return Returns the date-time on which the data has been calculated.
+    """
+
     def get_chart_date(self):
         return self.chart_gen_date
+
+    """
+    :return Returns the latest closing value.
+    """
 
     def get_close_latest(self):
         return self.close_latest

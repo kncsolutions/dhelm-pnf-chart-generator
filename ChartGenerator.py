@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+    **ChartGenerator.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 from DhelmPnfChartGenerator import DhelmPnfChartGenerator
-"""
-
-"""
 
 
 class ChartGenerator:

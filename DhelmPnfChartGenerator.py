@@ -1,13 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+    **DhelmPnfChartGenerator.py**
+    - Copyright (c) 2019, KNC Solutions Private Limited.
+    - License: 'Apache License, Version 2.0'.
+    - version: 1.0.0
+"""
 import xlsxwriter
 from DhelmPnfDataCalculator import DhelmPnfDataCalculator
 from Parameters import Box
 from Parameters import Types
 import time
-"""
-"""
 
 
 class DhelmPnfChartGenerator:
+	"""
+	It plots point and figure chart in excel and saves the chart in the specified location.
+	:param  df : The historical dataset. Must contain 'date', 'open', 'high', 'low', 'close' columns. The last row must be
+	the latest data.
+	:param scrip : The trading symbol/scrip identifier
+	:param exchange : The related exchange.
+	:param  box_type : The box sizes can be specified by some value or using some percentage of the latest item. This
+	parameter specifies that which of the two options to be used.
+	Valid values are from {Types.Method_value, Types.Method_percentage}
+	:param  calculation_method : Point and figure chart data will be calculated either using closing values or using
+	the high-low values. Valid values for this parameter are from {Types.Method_close, Types.Close}
+	:param box_size : Any custom box size. This will be valid only if box_type is Types.Method_value. If you want to use
+	default box sizes use -1 as argument.
+	:param reversal : The reversal amount. Default value is 3.
+	:param box_percentage : In case the box_type is Types.Method_percentage, the percentage amount can be specified here.
+	Default is 1 percent
+	:param folder : The relative path of the folder. Default value is 'pnfchart'. By default charts are stored in 'pnfchart'
+	folder.
+	"""
 	def __init__(self, df, scrip, exchange, box_type=Types.Method_value, calculation_method=Types.Method_close, box_size=-1,
 				reversal=3, box_percentage=1, folder='pnfchart'):
 		self.df = df
@@ -45,11 +69,11 @@ class DhelmPnfChartGenerator:
 				self.box_size = pnf.get_box_size()
 				self.column_data = pnf.get_columns()
 				if len(self.column_data) > 3:
-					self.plot_pnf_data()
+					self.__plot_pnf_data()
 	
-	def plot_pnf_data(self):
-		min_val = self.get_min_value()-self.box_size*self.offsetY
-		max_val = self.get_max_value()+self.box_size*self.offsetY
+	def __plot_pnf_data(self):
+		min_val = self.__get_min_value()-self.box_size*self.offsetY
+		max_val = self.__get_max_value()+self.box_size*self.offsetY
 		num_rows = int((max_val-min_val)/self.box_size)
 		num_cols = len(self.column_data)
 		Ys = []
@@ -160,14 +184,14 @@ class DhelmPnfChartGenerator:
 		workbook.close()
 		self.pnf_chart_generated = True
 
-	def get_min_value(self):
+	def __get_min_value(self):
 		min_val = self.column_data[0]['bottom']
 		for col in self.column_data:
 			if col['bottom'] < min_val:
 				min_val = col['bottom']
 		return min_val
 
-	def get_max_value(self):
+	def __get_max_value(self):
 		max_val=self.column_data[0]['bottom']
 		for col in self.column_data:
 			if col['top'] > max_val:
