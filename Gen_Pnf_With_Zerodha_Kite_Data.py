@@ -42,7 +42,6 @@ class Gen_Pnf_With_Zerodha_Kite_Data:
         self.__folder = 'charts_kite'
         for index, row in self.__list_stocks.iterrows():
             self.__data_historical = self.__get_historical_data(row)
-            print(self.__data_historical)
             print('Generating point and figure chart for ' + row['tradingsymbol'])
             ChartGenerator.gen_chart(self.__data_historical,
                                      row['tradingsymbol'],

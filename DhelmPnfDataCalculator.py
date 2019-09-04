@@ -38,6 +38,8 @@ class DhelmPnfDataCalculator:
         self.calculation_method = calculation_method
         self.box_size = box_size
         self.reversal = reversal
+        if self.reversal <= 0:
+            self.reversal = 3
         self.df = df
         h = self.df['high'].tolist()
         l = self.df['low'].tolist()
@@ -78,6 +80,8 @@ class DhelmPnfDataCalculator:
                 self.box_size = 500.00
 
         if self.box_type == Types.Method_percentage:
+            if self.box_percentage <= 0:
+                self.box_percentage = 1
             self.box_size = math.ceil(((c[len(c) - 1] - 1) * float(self.box_percentage)) / 100)
             if self.box_size == 0:
                 self.box_size = 1
