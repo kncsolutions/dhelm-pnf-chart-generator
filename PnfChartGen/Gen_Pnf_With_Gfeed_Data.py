@@ -14,9 +14,9 @@ import tzlocal
 from collections import OrderedDict, Counter
 from DhelmGfeedClient.gfeedclient import GfeedClient
 from DhelmGfeedClient.constants import Constants
-import Parameters
-import CredentialLoader
-from ChartGenerator import ChartGenerator
+from PnfChartGen.Parameters import *
+from PnfChartGen.CredentialLoader import Gfeed_URI_API_KEY
+from PnfChartGen.ChartGenerator import ChartGenerator
 
 
 class Gen_Pnf_With_Gfeed_Data:
@@ -25,20 +25,20 @@ class Gen_Pnf_With_Gfeed_Data:
     """
     def __init__(self):
         self.debug = False
-        self.__credentials = CredentialLoader.Gfeed_URI_API_KEY.get_gfeed_uri_api_key()
+        self.__credentials = Gfeed_URI_API_KEY.get_gfeed_uri_api_key()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         self.__client = GfeedClient(self.__credentials[0], self.__credentials[1])
         self.__list_stocks = pd.read_csv('settings/gfeed_chart_gen_list.csv')
         self.__df_list_historical_names = []
         self.__df_list_historical = []
         if self.__config.at[self.__config.first_valid_index(), 'method_percentage']:
-            self.__box_type = Parameters.Types.Method_percentage
+            self.__box_type = Types.Method_percentage
         else:
-            self.__box_type = Parameters.Types.Method_value
+            self.__box_type = Types.Method_value
         if 'close' in self.__config.at[self.__config.first_valid_index(), 'calculation_method']:
-            self.__calculation_method = Parameters.Types.Method_close
+            self.__calculation_method = Types.Method_close
         else:
-            self.__calculation_method = Parameters.Types.Method_highlow
+            self.__calculation_method = Types.Method_highlow
         self.__box_size = (self.__config.at[self.__config.first_valid_index(), 'BOX_SIZE'])
         self.__reversal = (self.__config.at[self.__config.first_valid_index(), 'REVERSAL'])
         self.__box_percentage = (self.__config.at[self.__config.first_valid_index(), 'BOX_PERCENTAGE'])
@@ -96,7 +96,9 @@ class Gen_Pnf_With_Gfeed_Data:
                 for index, row in self.__list_stocks.iterrows():
                     if row['tradingsymbol'] == request['InstrumentIdentifier']:
                         if not row['is_chart_generated']:
-                            self.__gen_chart(self.__data_historical, request['InstrumentIdentifier'])
+                            self.__gen_chart(self.__data_historical,
+                                             request['InstrumentIdentifier'],
+                                             request['Exchange'])
                             self.__list_stocks[index, 'is_chart_generated'] = True
 
         def on_message_last_quote(base_client, last_quote):
@@ -125,7 +127,9 @@ class Gen_Pnf_With_Gfeed_Data:
                     for index, row in self.__list_stocks.iterrows():
                         if row['tradingsymbol'] == last_quote['InstrumentIdentifier']:
                             if not row['is_chart_generated']:
-                                self.__gen_chart(self.__data_historical, last_quote['InstrumentIdentifier'])
+                                self.__gen_chart(self.__df_list_historical[i],
+                                                 last_quote['InstrumentIdentifier'],
+                                                 last_quote['Exchange'])
                                 self.__list_stocks[index, 'is_chart_generated'] = True
                     break
 
@@ -134,11 +138,11 @@ class Gen_Pnf_With_Gfeed_Data:
         self.__client.on_message_last_quote = on_message_last_quote
         self.__client.connect()
 
-    def __gen_chart(self, df, symbol):
+    def __gen_chart(self, df, symbol, exchange):
         print('Generating point and figure chart for ' + symbol)
         ChartGenerator.gen_chart(df,
                                  symbol,
-                                 self.__exchange,
+                                 exchange,
                                  self.__box_type,
                                  self.__calculation_method,
                                  self.__reversal,

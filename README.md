@@ -2,7 +2,8 @@ Using dhelm-pnf-chart-generator you can generate point and figure charts and sav
 * Global Datafeed Websocket API
 * Zerodha Kite developer API 
 * Quandl API
-
+## Version
+  1.0.0
 ## Compatibility
 This project has been tested on python 3.7 and run using anaconda 4.6. It can run on other python versions as well.
 ## Getting Started
@@ -14,7 +15,7 @@ It is that simple.
 
 ### Requirements
 Make sure that **pip** is installed.
-To run the project successfully following packages have to be installed:
+To run the project successfully, following packages have to be installed:
 * pandas
 * XlsxWriter
 * pytz

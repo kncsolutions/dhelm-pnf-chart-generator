@@ -11,9 +11,9 @@ from collections import OrderedDict, Counter
 from kiteconnect import KiteConnect
 from kiteconnect import exceptions
 import requests
-import Parameters
-import CredentialLoader
-from ChartGenerator import ChartGenerator
+from PnfChartGen.Parameters import *
+from PnfChartGen.CredentialLoader import KITE_API_KEY_ACCESS_TOKEN
+from PnfChartGen.ChartGenerator import ChartGenerator
 
 
 class Gen_Pnf_With_Zerodha_Kite_Data:
@@ -21,7 +21,7 @@ class Gen_Pnf_With_Zerodha_Kite_Data:
     This class generates point and figure chart after extracting data from zerodha kite historical api.
     """
     def __init__(self):
-        self.__credentials = CredentialLoader.KITE_API_KEY_ACCESS_TOKEN.get_kite_credentials()
+        self.__credentials = KITE_API_KEY_ACCESS_TOKEN.get_kite_credentials()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         self.__client = KiteConnect(self.__credentials[0])
         self.__client.set_access_token(self.__credentials[1])
@@ -29,11 +29,11 @@ class Gen_Pnf_With_Zerodha_Kite_Data:
         self.__to_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.__list_stocks = pd.read_csv('settings/kite_chart_gen_list.csv')
         if self.__config.at[self.__config.first_valid_index(), 'method_percentage']:
-            self.__box_type = Parameters.Types.Method_percentage
+            self.__box_type = Types.Method_percentage
         else:
-            self.__box_type = Parameters.Types.Method_value
+            self.__box_type = Types.Method_value
         if 'close' in self.__config.at[self.__config.first_valid_index(), 'calculation_method']:
-            self.__calculation_method = Parameters.Types.Method_close
+            self.__calculation_method = Types.Method_close
         else:
             self.__calculation_method = Parameters.Types.Method_highlow
         self.__box_size = (self.__config.at[self.__config.first_valid_index(), 'BOX_SIZE'])

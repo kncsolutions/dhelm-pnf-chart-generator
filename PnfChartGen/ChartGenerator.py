@@ -5,7 +5,7 @@
     - License: 'Apache License, Version 2.0'.
     - version: 1.0.0
 """
-from DhelmPnfChartGenerator import DhelmPnfChartGenerator
+from PnfChartGen.DhelmPnfChartGenerator import DhelmPnfChartGenerator
 
 
 class ChartGenerator:

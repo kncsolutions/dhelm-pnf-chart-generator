@@ -5,9 +5,9 @@
     - License: 'Apache License, Version 2.0'.
     - version: 1.0.0
 """
-from Column import Column
-from Parameters import Box
-from Parameters import Types
+from PnfChartGen.Column import Column
+from PnfChartGen.Parameters import Box
+from PnfChartGen.Parameters import Types
 import math
 
 

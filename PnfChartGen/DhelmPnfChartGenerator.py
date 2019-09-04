@@ -6,9 +6,9 @@
     - version: 1.0.0
 """
 import xlsxwriter
-from DhelmPnfDataCalculator import DhelmPnfDataCalculator
-from Parameters import Box
-from Parameters import Types
+from PnfChartGen.DhelmPnfDataCalculator import DhelmPnfDataCalculator
+from PnfChartGen.Parameters import Box
+from PnfChartGen.Parameters import Types
 import time
 
 

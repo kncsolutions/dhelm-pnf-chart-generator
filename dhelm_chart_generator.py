@@ -8,13 +8,13 @@
 import datetime
 import pandas as pd
 import time
-import Parameters
-from PackageInstaller import install_packages
+from PnfChartGen import Parameters
+from PnfChartGen.PackageInstaller import install_packages
 import subprocess
 import sys
-from Gen_Pnf_WIth_Quandl_Data import Gen_Pnf_With_Quandl_Data
-from Gen_Pnf_With_Gfeed_Data import Gen_Pnf_With_Gfeed_Data
-from Gen_Pnf_With_Zerodha_Kite_Data import Gen_Pnf_With_Zerodha_Kite_Data
+from PnfChartGen.Gen_Pnf_WIth_Quandl_Data import Gen_Pnf_With_Quandl_Data
+from PnfChartGen.Gen_Pnf_With_Gfeed_Data import Gen_Pnf_With_Gfeed_Data
+from PnfChartGen.Gen_Pnf_With_Zerodha_Kite_Data import Gen_Pnf_With_Zerodha_Kite_Data
 
 install_packages.install()
 

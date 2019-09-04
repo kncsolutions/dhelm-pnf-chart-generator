@@ -18,12 +18,11 @@ class install_packages:
     @staticmethod
     def install():
         df = pd.read_csv('package_status.csv')
-        print(df.at[df.first_valid_index(), 'a'])
+        print("Please Wait...")
         if df.at[df.first_valid_index(), 'a'] == 1:
             return
         reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
         installed_packages = [r.decode().split('==')[0] for r in reqs.split()]
-        print(installed_packages)
         package_list = ['pandas',
                         'XlsxWriter',
                         'pytz',
@@ -44,5 +43,4 @@ class install_packages:
                 success = False
         if success:
             df.loc[df.first_valid_index(), 'a'] = 1
-            print(df)
             df.to_csv('package_status.csv', encoding='utf-8', index=False)

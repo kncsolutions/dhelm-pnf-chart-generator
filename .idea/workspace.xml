@@ -3,10 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="ef171939-6c1a-4678-85e3-64bf8a058393" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DhelmPnfDataCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/DhelmPnfDataCalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gen_Pnf_With_Zerodha_Kite_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gen_Pnf_With_Zerodha_Kite_Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChartGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/ChartGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Column.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/Column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CredentialLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/CredentialLoader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DhelmPnfChartGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/DhelmPnfChartGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DhelmPnfDataCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/DhelmPnfDataCalculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gen_Pnf_WIth_Quandl_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_WIth_Quandl_Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gen_Pnf_With_Gfeed_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Gfeed_Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gen_Pnf_With_Zerodha_Kite_Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Zerodha_Kite_Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PackageInstaller.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/PackageInstaller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/PnfChartGen/Parameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/dhelm_pnf_chart_gen_settings.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/settings/dhelm_pnf_chart_gen_settings.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_gfeed/BHEL_close.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts_gfeed/BHEL_close.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_gfeed/SBIN_close.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts_gfeed/SBIN_close.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_gfeed/TCS_close.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts_gfeed/TCS_close.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_quandl/BOM500410_close.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts_quandl/BOM500410_close.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_quandl/BOM508869_close.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts_quandl/BOM508869_close.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dhelm_chart_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dhelm_chart_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package_status.csv" beforeDir="false" afterPath="$PROJECT_DIR$/package_status.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/data_source_credentials.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/settings/data_source_credentials.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gfeed_credentials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gfeed_credentials.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/kite_credentials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/settings/kite_credentials.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +33,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Gfeed_Data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+              <folding>
+                <element signature="e#191#210#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="199">
+                <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/DhelmPnfChartGenerator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/Parameters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-80">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/DhelmPnfDataCalculator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/PackageInstaller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+              <folding>
+                <element signature="e#184#201#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dhelm_chart_generator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -29,13 +109,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PackageInstaller.py">
+        <entry file="file://$PROJECT_DIR$/PnfChartGen/CredentialLoader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-              <folding>
-                <element signature="e#184#201#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -54,6 +131,7 @@
       <find>item['time']</find>
       <find>get_min_value</find>
       <find>prin</find>
+      <find>Para</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,10 +149,18 @@
         <option value="$PROJECT_DIR$/DhelmPnfChartGenerator.py" />
         <option value="$PROJECT_DIR$/Column.py" />
         <option value="$PROJECT_DIR$/ChartGenerator.py" />
-        <option value="$PROJECT_DIR$/dhelm_chart_generator.py" />
         <option value="$PROJECT_DIR$/PackageInstaller.py" />
         <option value="$PROJECT_DIR$/Gen_Pnf_With_Zerodha_Kite_Data.py" />
         <option value="$PROJECT_DIR$/DhelmPnfDataCalculator.py" />
+        <option value="$PROJECT_DIR$/dhelm_chart_generator.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/ChartGenerator.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/DhelmPnfChartGenerator.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/DhelmPnfDataCalculator.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/PackageInstaller.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/__init__.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_WIth_Quandl_Data.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Zerodha_Kite_Data.py" />
+        <option value="$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Gfeed_Data.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -98,12 +184,22 @@
               <item name="dhelm-pnf-chart-generator" type="b2602c69:ProjectViewProjectNode" />
               <item name="dhelm-pnf-chart-generator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dhelm-pnf-chart-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dhelm-pnf-chart-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="PnfChartGen" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Developer_Tools\dhelm-pnf-chart-generator\PnfChartGen" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -162,92 +258,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChartGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="3" lean-forward="true" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Column.py">
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/Column.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gen_Pnf_With_Gfeed_Data.py">
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/PackageInstaller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-          <folding>
-            <element signature="e#191#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parameters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CredentialLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="3" lean-forward="true" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DhelmPnfDataCalculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DhelmPnfChartGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PackageInstaller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        <state relative-caret-position="495">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
           <folding>
             <element signature="e#184#201#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="533">
-            <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/CredentialLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gen_Pnf_With_Zerodha_Kite_Data.py">
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="16" />
-          <folding>
-            <element signature="e#198#217#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gen_Pnf_WIth_Quandl_Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="16" />
+        <state relative-caret-position="40">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -258,6 +296,74 @@
           <folding>
             <element signature="e#189#204#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/ChartGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/DhelmPnfChartGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/DhelmPnfDataCalculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/Parameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/Gen_Pnf_WIth_Quandl_Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+          <folding>
+            <element signature="e#193#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Zerodha_Kite_Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="e#198#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PnfChartGen/Gen_Pnf_With_Gfeed_Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#191#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="199">
+            <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -9,9 +9,9 @@
 import quandl
 import pandas as pd
 import datetime
-import Parameters
-import CredentialLoader
-from ChartGenerator import ChartGenerator
+from PnfChartGen.Parameters import *
+from PnfChartGen.CredentialLoader import Quandl_API_KEY
+from PnfChartGen.ChartGenerator import ChartGenerator
 
 
 class Gen_Pnf_With_Quandl_Data:
@@ -19,7 +19,7 @@ class Gen_Pnf_With_Quandl_Data:
     This class generates point and figure chart after extracting data from quandl.
     """
     def __init__(self):
-        quandl.ApiConfig.api_key = CredentialLoader.Quandl_API_KEY.get_quandl_api_key()
+        quandl.ApiConfig.api_key = Quandl_API_KEY.get_quandl_api_key()
         self.__config = (pd.read_excel('settings/dhelm_pnf_chart_gen_settings.xlsx'))
         from_date = (self.__config.at[self.__config.first_valid_index(), 'from_dt']).strftime("%Y-%m-%d")
         to_date = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -39,11 +39,11 @@ class Gen_Pnf_With_Quandl_Data:
             self.__data_historical['close'] = self.__tmp['Close']
             self.__data_historical['volume'] = self.__tmp['No. of Shares']
             if self.__config.at[self.__config.first_valid_index(), 'method_percentage']:
-                self.__box_type = Parameters.Types.Method_percentage
+                self.__box_type = Types.Method_percentage
             else:
-                self.__box_type = Parameters.Types.Method_value
+                self.__box_type = Types.Method_value
             if 'close' in self.__config.at[self.__config.first_valid_index(), 'calculation_method']:
-                self.__calculation_method = Parameters.Types.Method_close
+                self.__calculation_method = Types.Method_close
             else:
                 self.__calculation_method = Parameters.Types.Method_highlow
             self.__box_size = (self.__config.at[self.__config.first_valid_index(), 'BOX_SIZE'])
